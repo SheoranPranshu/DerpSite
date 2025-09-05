@@ -3,7 +3,6 @@ import TeamData from '../components/data/team.json'
 const Team = () => {
    return (
       <div className="py-12 min-h-screen bg-base-100">
-         {/* Header Section */}
          <div className="text-center mb-12">
             <h1 className="text-5xl font-bold text-base-content mb-4">
                Meet Our Team
@@ -26,10 +25,19 @@ const Team = () => {
                      <div className="card-body p-6">
                         <div className="flex justify-center mb-4">
                            <div className="avatar placeholder">
-                              <div className="bg-gradient-to-r from-[#33bbff] to-[#1de099] text-white rounded-full w-16 h-16 shadow-lg">
-                                 <span className="text-xl font-bold">
+                              <div className="bg-gradient-to-br from-[#33bbff] via-[#2dd4bf] to-[#1de099] text-white rounded-full w-16 h-16 shadow-lg relative overflow-hidden group">
+                                 {/* Background Pattern */}
+                                 <div className="absolute inset-0 opacity-20">
+                                    <div className="absolute top-1 left-1 w-3 h-3 bg-white/30 rounded-full"></div>
+                                    <div className="absolute bottom-2 right-2 w-2 h-2 bg-white/20 rounded-full"></div>
+                                    <div className="absolute top-1/2 right-1 w-1 h-1 bg-white/40 rounded-full"></div>
+                                 </div>
+                                 
+                                 <span className="text-xl font-bold relative z-10 drop-shadow-sm">
                                     {team.name.split(' ').map(n => n[0]).join('').toUpperCase()}
                                  </span>
+                                 
+                                 <div className="absolute inset-0 rounded-full ring-2 ring-white/20"></div>
                               </div>
                            </div>
                         </div>
